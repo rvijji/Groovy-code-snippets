@@ -1,0 +1,7 @@
+{% set newValues = [] %}
+{% for option in issue.fields.Flagged %}
+  {% if option.value != "Impediment" %}
+    {% set ignored = newValues.push(option) %}
+  {% endif %}
+{%endfor%}
+{{newValues | dump}}
